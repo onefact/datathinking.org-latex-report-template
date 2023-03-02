@@ -1,0 +1,66 @@
+\documentclass[twoside]{article}
+
+\input{main/preamble/preamble}
+\input{main/preamble/biblatex}
+\input{main/preamble/acronyms}
+
+\addbibresource{references.bib}
+
+\usepackage[accepted]{aistats2021}
+% aistats2021 as follows:
+%
+%\usepackage[accepted]{aistats2021}
+%
+
+\begin{document}
+% 25 words max
+\runningtitle{Running Title}
+\runningauthor{Lastname}
+\twocolumn[
+\aistatstitle{Running Title}
+% \begin{tcolorobox}
+% \begin{center}
+%     \textsc{draft: do not cite or redistribute}
+% \end{center}
+% \end{tcolorbox}
+% \vspace{1cm}
+\aistatsauthor{Firstname Lastname\\\url{Firstname@onefact.org}
+\And
+Coauthor CoauthorLastName\\\url{email@school.edu}}
+\aistatsaddress{Title\\
+Institution
+\And
+Title\\
+Institution}
+]
+
+\begin{abstract} 
+Blurb about what this is about
+\end{abstract}
+\section{Introduction}
+
+Blurb and citations
+
+\section{Innovation of Research}
+
+\paragraph{Paragraph header.} Paragraph and citations.
+
+\begin{figure*}
+\centering
+\begin{centering}
+\includegraphics[width=0.7\textwidth]{main/figures/clinicalbert-diagram.pdf}
+\end{centering}
+\footnotesize
+\caption{\label{fig:clinicalbert-diagram}  
+\textbf{Caption and citations
+}}
+\end{figure*}
+\section{Approach and Methods}
+
+\section{Discussion}
+
+\section{Conclusion}
+
+\subsubsection*{References} 
+\printbibliography[heading=none]
+\end{document}

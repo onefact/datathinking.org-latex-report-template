@@ -1,0 +1,236 @@
+\documentclass[twoside]{article}
+
+\input{main/preamble/biblatex.tex}
+% ACRONYMS
+\usepackage[acronym,nowarn]{glossaries}
+\glsdisablehyper
+\input{main/preamble/acronyms.tex}
+
+\addbibresource{references.bib}
+
+\usepackage[accepted]{aistats2021}
+% If your paper is accepted, change the options for the package
+% aistats2021 as follows:
+%
+%\usepackage[accepted]{aistats2021}
+%
+% This option will print headings for the title of your paper and
+% headings for the authors names, plus a copyright note at the end of
+% the first column of the first page.
+
+% If you set papersize explicitly, activate the following three lines:
+%\special{papersize = 8.5in, 11in}
+%\setlength{\pdfpageheight}{11in}
+%\setlength{\pdfpagewidth}{8.5in}
+
+% If you use natbib package, activate the following three lines:
+%\usepackage[round]{natbib}
+%\renewcommand{\bibname}{References}
+%\renewcommand{\bibsection}{\subsubsection*{\bibname}}
+
+% If you use BibTeX in apalike style, activate the following line:
+%\bibliographystyle{apalike}
+
+% HYPERREF
+% \usepackage[all]{hypcap}
+\usepackage{glossaries}
+\newacronym{ms}{\textsc{ms}}{mass spectrometry}
+\newacronym{lcms}{\textsc{lc-ms}}{liquid chromatography-mass spectrometry}
+\newacronym{lcmsms}{\textsc{lc-ms/ms}}{liquid chromatography tandem mass spectrometry}
+\newacronym{msms}{\textsc{ms/ms}}{tandem mass spectrometry}
+\newacronym{messar}{\textsc{messar}}{metabolite substructure auto-recommender}
+\newacronym{llda}{\textsc{llda}}{labeled latent Dirichlet allocation}
+\newacronym{rfs}{\textsc{rfs}}{\textsc{rankfromsets}}
+\newacronym{mona}{\textsc{MoNA}}{MassBank of North America}
+\newacronym{csi}{\textsc{csi:f}inger\textsc{id}}{Compound Structure Identification: FingerID}
+\newacronym{rfs-meta}{\textsc{rfs}-Metadata}{\textsc{rfs}-Metadata}
+
+\usepackage{graphicx} % reder
+\usepackage{booktabs}       % professional-quality tables % reder
+
+% TABLE ALIGNMENT
+\usepackage{siunitx}
+\robustify\bfseries
+\sisetup{detect-weight=true, detect-shape=true, detect-mode=true,
+table-format=5.0,
+table-number-alignment=center,
+         group-separator={,},
+% separate-uncertainty=true,
+% input-ignore={,},
+input-decimal-markers={.}}
+
+% \newrobustcmd\usd{\$}    % <---
+% \sisetup{table-format=8,
+%          table-space-text-pre = \usd,
+%          table-align-text-pre = false,
+%          group-separator={,},
+%          input-decimal-markers={.}
+%          }
+\usepackage{etoolbox}
+
+% \usepackage{multicol, blindtext} % reder
+% \usepackage{subfigure} % reder
+\usepackage{caption} % reder
+\usepackage{subcaption} % reder
+\usepackage[export]{adjustbox} % reder
+\usepackage{floatrow} % reder
+\usepackage{bold-extra}
+\usepackage{amsfonts}
+% \usepackage{tcolorbox}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\newcommand\myshade{85}
+\colorlet{mylinkcolor}{violet}
+\colorlet{mycitecolor}{Bittersweet} % YellowOrange, BurntOrange
+\colorlet{myurlcolor}{Aquamarine}
+\usepackage{hyperref}       % hyperlinks
+% \usepackage[all]{hypcap}
+\hypersetup{
+  colorlinks=true,
+   citecolor=Violet,
+  linkcolor=Violet,
+   urlcolor=MidnightBlue,
+  linktoc=all
+  }
+
+
+\setlength{\parskip}{0.15cm plus1mm minus1mm}
+
+\usepackage[capitalize,nameinlink]{cleveref} 
+
+
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text,Scale=1}
+\setmainfont[BoldFont={[ChaparralPro-Bold.otf]},
+ItalicFont={[ChaparralPro-Italic.otf]}]{[ChaparralPro-Regular.otf]}
+
+% for image captions
+\newsavebox{\imagebox}
+
+\begin{document}
+% If your paper is accepted and the title of your paper is very long,
+% the style will print as headings an error message. Use the following
+% command to supply a shorter title of your paper so that it can be
+% used as headings.
+%
+% 25 words max
+\runningtitle{Predicting Rehospitalization Risk in People With Severe Mental Illness}
+% If your paper is accepted and the number of authors is large, the
+% style will print as headings an error message. Use the following
+% command to supply a shorter version of the authors names so that
+% they can be used as headings (for example, use only the surnames)
+%
+\runningauthor{Altosaar}
+\twocolumn[
+\aistatstitle{Resource Request:\\
+Predicting Rehospitalization Risk in People With Severe Mental Illness}
+% \begin{tcolorobox}
+% \begin{center}
+%     \textsc{draft: do not cite or redistribute}
+% \end{center}
+% \end{tcolorbox}
+\vspace{1cm}
+\aistatsauthor{Dr. Jaan Altosaar\\\url{jaan@onefact.org}
+\And
+Dr. Peter Antkowiak\\\url{pantkowi@bidmc.harvard.edu}}
+\aistatsaddress{Chief Executive Officer\\
+One Fact Foundation\\
+Columbia University Irving Medical Center
+\And
+Chief of Emergency Medicine\\
+APHMFP at Harrington Healthcare\\
+Harvard Medical School}
+]
+\section{Research Funding}
+\paragraph{Rationale.} Dr. Altosaar and Dr. Antkowiak each request \$20,000 to enable 3.5 full-time equivalent months to supervise this study throughout the duration of this award, remotely analyze data and train the machine learning models. \$10,000 is requested to cover the cost of one of the research coordinator we already work with at our respective institutions to recruit participants, engage community organizations, and deliver the devices to participants in the Boston area. Given our experience supervising similar work, this budget is adequate to cover the cost of collecting real-world patient-generated data remotely, cleaning the data, training machine learning models on the requested computational resources, analyzing the results, writing the paper, and submitting it for peer-review in addition to publishing it online through the One Fact Foundation and Harvard Medical School websites. \Cref{table:research} displays the research budget for this proposed pilot.
+
+\section{Fitbit Devices} 
+%Fitbit devices
+    % You are encouraged to estimate the cost based on retail cost in the Fitbit online store. Define quantities needed in each category: 
+    %     Smartwatch 
+    %     Tracker 
+    %     Smart Scale 
+    % Define number of smartwatches and trackers requesting a 12-month Fitbit Premium subscription. 
+\paragraph{Rationale.} The Fitbit Charge 5 tracker was selected as it collects electrocardiogram measurements in addition to electrodermal skin conductance, alongside standard accelerometry datapoints. These have been implicated as correlated to positive and negative symptoms of severe mental illness~\cite{fonseka_wearables_2022}. \Cref{table:fitbit} displays the budget allocated for the purchase of 300 devices, which will represent a significant cohort of patients across a variety of assisted living facilities and assertive community treatment programs in the population of the greater Boston area that the Harvard Medical School serves. Finally, the number of devices is high owing to the small risk of patient dropout---a risk we have minimized in our research plan, by electing to conduct community outreach and engage assertive community treatment plans. These care teams are in close contact at a weekly, or often, daily cadence, and owing to the richer view of disease state the dashboard we can offer them and their patients can give, we anticipate this pilot to have high participant engagement rates as in our previous research of this nature.
+
+\section{Fitabase Services}
+%    You are encouraged to make a copy of this pricing calculator to estimate requested amount. Define platform and services requested to support remote data collection and analysis, etc.
+\paragraph{Rationale.} This platform is required to collect patient-generated data remotely throughout the study. Specifically, we opted for a larger number of participants in lieu of a fewer number observed for a longer duration. That is because of the severity of mental illness and health disparity that this proposal addresses. As an example, the Social Security Administration requires a minimum of three hospitalizations per calendar year~\cite{ssa_appendix_2022} for an individual to even be eligibile for disability insurance in the United States. In our clinical experience, patients are often much sicker and rehospitalization rates in severely disadvantaged areas can run into double digits each month for a single patient. \Cref{table:fitabase} displays the requested resources for three months of observation, enabling us to split the cohort into 100 participants at a time which will make efficient use of research coordinator time (for example, stratifying by geographic area would thus be possible to avoid redundant trips across the city to deliver devices).
+
+\section{Cloud Credits}
+%    You are encouraged to use this pricing calculator to estimate requested amount. Define how specific features and services of Google Cloud will be leveraged and include a link to your calculator results.
+\paragraph{Rationale.} We opted for Google Cloud Platforms Tensor Processing Unit chips (TPUs) which are an efficient way to train the machine learning model we have built~\cite{huang_clinicalbert_2020} on time-series data from the wearable devices. The data will be represented in OMOP common data model~\cite{voss_feasibility_2015} as is standard in our work aggregating data across disparate health systems and patient populations, and training will be parallelized across the TPU chips. The research request for these cloud credits is shown in \Cref{table:cloud}.
+
+\begin{table*}[t!]
+\centering
+\begin{tabular}{ll
+S[table-format=5.0]
+S[table-format=1.0]
+S[table-format=5.0]}
+\toprule
+Unit Type & Description & \multicolumn{1}{c}{Volume} & \multicolumn{1}{c}{Unit Cost (\$)} & \multicolumn{1}{c}{Total (\$)}\\
+\midrule
+FTE Months & Senior personnel & 7 & 5 800 & 40 600 \\
+FTE Months & Research coordinator & 12 & 780 & 9 360 \\
+\bottomrule
+\end{tabular}
+\vspace{1ex}
+\caption{\textbf{Research Funding.} Budget is given for FTE months for senior and junior personnel, with the research coordinator serving a part-time position which is sufficient for the scale of pilot we propose.}
+\label{table:research}
+\end{table*}
+
+\begin{table*}[t!]
+\centering
+\begin{tabular}{ll
+S[table-format=4.2]
+S[table-format=1.0]
+S[table-format=5.0]}
+\toprule
+Unit Type & Description & \multicolumn{1}{c}{Volume} & \multicolumn{1}{c}{Unit Cost (\$)} & \multicolumn{1}{c}{Total (\$)}\\
+\midrule
+Tracker & Fitbit Charge 5 & 300 & 149.95 & 44 985 \\
+\bottomrule
+\end{tabular}
+\vspace{1ex}
+\caption{\textbf{Fitbit Devices.} The Fitbit Charge 5 tracker was selected for this pilot because if its ability to generate real-world evidence from patient generated data using both electrocardiogram measurements and electrodermal skin conductance alongside standard accelerometry, which have been shown to correlate to symptoms of severe mental illness such as schizophrenia~\cite{fonseka_wearables_2022}. }
+\label{table:fitbit}
+\end{table*}
+
+\begin{table*}[t!]
+\centering
+\begin{tabular}{S[table-format=3.0]
+S[table-format=1.0]
+S[table-format=2.0]
+S[table-format=4.1]}
+\toprule
+{Participants} & {Observation (Months)} & \multicolumn{1}{c}{Duration (Months)} & \multicolumn{1}{c}{Total (\$)} \\
+\midrule
+300 & 3 & 12 & 8 991 \\
+\bottomrule
+\end{tabular}
+\vspace{1ex}
+\caption{\textbf{Fitabase Services.} The HERI pricing calculator was used to compute this estimate; the link to the Google Sheets is \href{https://docs.google.com/spreadsheets/d/1GUWC0KFNLuVbwPpbbyFd2cCon0Q953x7cyLKo7gORl0/edit?usp=sharing}{here}. Given the severity of mental illness in this cohort, three months is sufficient to balance the number of hospitalizations across disease severity levels. For example which there are several every year for moderately ill patients, and of which there may be several per month for a patient with severe schizophrenia. Three months of observation also allows us to stagger three sub-cohorts of 100 people each, in order to iterate on the data collection protocol and ensure a diverse patient population is recruited during the 12 months of observation.}
+\label{table:fitabase}
+\end{table*}
+
+\begin{table*}[t!]
+\centering
+\begin{tabular}{ll
+S[table-format=4.2]
+S[table-format=1.0]
+S[table-format=5.0]}
+\toprule
+Unit Type & Description & \multicolumn{1}{c}{Volume} & \multicolumn{1}{c}{Unit Cost (\$)} & \multicolumn{1}{c}{Total (\$)}\\
+\midrule
+Hardware & 16-chip V2-32 TPU & 720 & 1.13 & 13 140 \\
+\bottomrule
+\end{tabular}
+\vspace{1ex}
+\caption{\textbf{Cloud Credits.} This estimate is for sufficient computation to train the machine learning model used in our previous work~\cite{huang_clinicalbert_2020} on data collected from 300 participants for 3 months several times over (to account for hyperparameter searches these large time-series model require).  The link to the Google Cloud Platform pricing calculator tool is \href{https://cloud.google.com/products/calculator/\#id=f97127b5-f5e5-4c41-a7bb-008b317a42af}{here}. The model has already been pre-trained on electronic health records that include structured data such as heart rate, skin conductance, and rehospitalization for some patients. This reduces the computational burden as the model will require fewer datapoints and hospitalizations to be able to accurately predict this risk for clinicians.}
+\label{table:cloud}
+\end{table*}
+\clearpage
+\subsubsection*{References} 
+\printbibliography[heading=none]
+\end{document}
